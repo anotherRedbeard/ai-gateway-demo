@@ -34,7 +34,7 @@ resource gateway 'Microsoft.ApiManagement/aigateways@2026-09-01-preview' = {
     type: 'SystemAssigned'
   }
   sku: {
-    name: 'AIGateway'
+    name: 'Consumption'
   }
   properties: {}
 }

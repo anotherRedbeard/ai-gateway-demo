@@ -10,7 +10,7 @@ deployment.
 
 | Resource | Configuration |
 | --- | --- |
-| AI Gateway | `Microsoft.ApiManagement/aigateways@2026-09-01-preview`, `AIGateway` SKU, system-assigned managed identity |
+| AI Gateway | `Microsoft.ApiManagement/aigateways@2026-09-01-preview`, `Consumption` SKU, system-assigned managed identity |
 | Application Insights | Workspace-based, backed by the Log Analytics workspace below |
 | Log Analytics workspace | `PerGB2018`, 30-day retention by default |
 
@@ -20,6 +20,9 @@ This uses the dedicated AI Gateway resource, **not** a classic APIM
 publishes `2026-09-01-preview`; the
 [overview](https://learn.microsoft.com/azure/api-management/ai-gateway-overview)
 still mentions an earlier preview API version.
+
+The native resource accepts `Consumption` and `Premium` SKU names; `AIGateway`
+is not a valid SKU for this resource type. This demo uses `Consumption`.
 
 All resources default to **East US 2**. Edit `infra/main.parameters.json` to change
 the region to `swedencentral`, resource name prefix, or log retention. These are
